@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+}
+
+header {
+  background-image: url("images/bg.jpg");
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#projects h1 {
+  padding: 10px 0;
+  border-bottom: 2px solid #353839;
+}
+
+footer {
+  border-top: 2px solid #353839;
+}
+
+footer a {
+  margin: 20px;
+  font-size: 32px !important;
+  color: black;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
