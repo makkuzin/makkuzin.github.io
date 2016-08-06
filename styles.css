@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  font: sans-serif;
 }
 
 header {
@@ -12,18 +13,25 @@ header {
   background-size: cover;
 }
 
-#projects h1 {
+.projects-caption {
   padding: 10px 0;
-  border-bottom: 2px solid #353839;
 }
 
-footer {
-  border-top: 2px solid #353839;
+.project {
+  width: 350px;
+}
+
+.project img {
+  max-width: 100%;
+}
+
+hr {
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 footer a {
-  margin: 20px;
-  font-size: 32px !important;
+  margin: 0 10px 20px 10px;
   color: black;
 }
 
