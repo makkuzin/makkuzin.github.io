@@ -14,6 +14,7 @@ resizeProjects = function() {
 };
 
 $(window).load(function() {
+  $('[title]').tooltip();
   resizeProjects();
   $projects = $('#projects')
   $projects.masonry({
