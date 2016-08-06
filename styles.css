@@ -34,3 +34,7 @@ footer a {
 footer a:hover {
   text-decoration: none;
 }
+
+footer a:focus {
+  text-decoration: none;
+}
