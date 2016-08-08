@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+a:hover, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   background-image: url("images/bg.jpg");
   height: 100%;
@@ -13,12 +18,22 @@ header {
   color: #fff;
 }
 
+header a {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
 #about_me {
   background-color: inherit !important;
 }
 
 .section-title {
   padding: 20px;
+}
+
+.project {
+  margin-top: 24px;
 }
 
 .project img {
@@ -28,7 +43,6 @@ header {
 .project .caption {
   padding: 20px;
   background: #eaeaea;
-  margin-bottom: 20px;
 }
 
 hr {
@@ -39,12 +53,4 @@ hr {
 footer a {
   margin: 0 10px 20px 10px;
   color: black;
-}
-
-footer a:hover {
-  text-decoration: none;
-}
-
-footer a:focus {
-  text-decoration: none;
 }
