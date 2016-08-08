@@ -1,3 +1,6 @@
+$('body').css('display', 'none');
+$('body').append('<div id="loader" class="h1" style="position:absolute; top: 50%; left: 50%">Wait for a moment</div>');
+
 $spaceBetweenProjects = 24;
 $paddingContainer = 15;
 
@@ -14,6 +17,8 @@ resizeProjects = function() {
 };
 
 $(window).load(function() {
+  $('body').css('display', 'block');
+  $('#loader').hide();
   $('[title]').tooltip();
   resizeProjects();
   $projects = $('#projects')
