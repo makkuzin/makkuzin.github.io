@@ -1,5 +1,6 @@
 html, body {
   height: 100%;
+  font-family: Cantarell, Ubuntu, sans;
 }
 
 a:hover, a:focus {
@@ -26,6 +27,10 @@ header a {
 
 #about_me {
   background-color: inherit !important;
+}
+
+#about_me p {
+  color: #cacaca;
 }
 
 .section-title {
