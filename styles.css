@@ -1,6 +1,5 @@
 html, body {
   height: 100%;
-  font: sans-serif;
 }
 
 header {
@@ -11,6 +10,11 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #fff;
+}
+
+#about_me {
+  background-color: inherit !important;
 }
 
 .section-title {
@@ -19,6 +23,12 @@ header {
 
 .project img {
   max-width: 100%;
+}
+
+.project .caption {
+  padding: 20px;
+  background: #eaeaea;
+  margin-bottom: 20px;
 }
 
 hr {
