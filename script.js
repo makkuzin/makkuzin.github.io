@@ -14,7 +14,6 @@ resizeProjects = function() {
 };
 
 $(window).load(function() {
-  $('header').css('background-image', 'url("images/bg.gif")');
   $('[title]').tooltip();
   resizeProjects();
   $projects = $('#projects')
