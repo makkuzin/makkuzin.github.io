@@ -25,12 +25,17 @@ header a {
   width: 100%;
 }
 
-#about_me {
-  background-color: inherit !important;
+header dd {
+  margin-left: 40px !important;
 }
 
-#about_me p {
-  color: #cacaca;
+#about_me {
+  background-color: inherit !important;
+  color: #eaeaea;
+}
+
+#about_me h1 {
+  color: #fff !important;
 }
 
 .section-title {
