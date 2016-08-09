@@ -1,3 +1,8 @@
+$projectsUrls = [
+  'https://makk.herokuapp.com',
+  'https://akkush.herokuapp.com',
+  'https://photokeeper.herokuapp.com'
+]
 $spaceBetweenProjects = 24;
 $paddingContainer = 15;
 
@@ -22,6 +27,14 @@ $(window).load(function() {
     gutter: $spaceBetweenProjects,
     isFitWidth: true
   });
+  //ping projects
+  for(url in $projectsUrls) {
+    $.ajax({
+      url: $projectsUrls[url],
+      type: 'get',
+      async: true
+    });
+  }
 });
 
 $(window).resize(function() {
