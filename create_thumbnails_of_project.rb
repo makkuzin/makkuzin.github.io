@@ -14,7 +14,7 @@ end
 unless orig_images.empty?
   orig_images.each do |orig_image|
     thumb = MiniMagick::Image.open(orig_image)
-    thumb.resize "640x360"
+    thumb.resize "960x540"
     thumb.format "jpg"
     thumb.write orig_image.gsub('.png', '_thumb.jpg')
   end
