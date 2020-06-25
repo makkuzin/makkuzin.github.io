@@ -5,8 +5,10 @@ email: maksim.akkuzin@yandex.ru
 author: Maksim Akkuzin
 
 url: ""
-# Link to a privacy policy in footer, uncomment and define if wanted
-# privacy: https://domain.com/privacy
+
+repo: "https://github.com/makkuzin/makkuzin.github.io"
+github_user: "makkuzin"
+github_repo: "makkuzin.github.io"
 
 # Image and (square) dimension for logo (don't start with /)
 # If commented, will use material hat theme
