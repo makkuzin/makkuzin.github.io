@@ -1,13 +1,11 @@
 ---
-layout: page
+layout: default
 permalink: /
 ---
 
 # Welcome to Docsy Jekyll
 
 This is a starter template for a docsy jekyll theme.
-
-![assets/img/docsy-jekyll.png](assets/img/docsy-jekyll.png)
 
 ## Purpose
 
@@ -22,8 +20,7 @@ and includes all the features that I might want.
 
 ## Features
 
-What are these features? You should see the {% include doc.html name="Getting Started" path="getting-started" %}
-guide for a complete summary. Briefly:
+What are these features? Briefly:
 
  - *User interaction* including consistent permalinks, links to ask questions via GitHub issues, and edit the file on GitHub directly.
  - *Search* across posts, documentation, and other site pages, with an ability to exclude from search.
@@ -34,7 +31,3 @@ guide for a complete summary. Briefly:
  - *News* A posts feed for news and updates, along with an archive (organized by year).
  - *Templates* or specifically, "includes" that make it easy to create an alert, documentation link, or other content.
  - *Continuous Integration* recipes to preview the site
-
-
-For features, getting started with development, see the {% include doc.html name="Getting Started" path="getting-started" %} page. Would you like to request a feature or contribute?
-[Open an issue]({{ site.repo }}/issues)

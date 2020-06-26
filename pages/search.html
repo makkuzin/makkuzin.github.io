@@ -1,9 +1,7 @@
 ---
+layout: default
 title: Search
-sitemap: false
 permalink: /search/
-not_editable: true
-excluded_in_search: true
 ---
 
 <input class="form-control td-search-input" type="search" name="q" id="search-input" placeholder="&#xf002 Search this site…"  style="margin-top:5px" autofocus>
@@ -15,7 +13,7 @@ excluded_in_search: true
 
 <script>
 	window.data = {
-		{% for post in site.docs %}
+		{% for post in site.books %}
 				{% unless post.excluded_in_search %}
 					{% if added %},{% endif %}
 					{% assign added = false %}
@@ -29,21 +27,7 @@ excluded_in_search: true
 					{% assign added = true %}
 				{% endunless %}
 		{% endfor %}
-		{% for post in site.posts %}
-				{% unless post.excluded_in_search %}
-					{% if added %},{% endif %}
-					{% assign added = false %}
-					"{{ post.url | slugify }}": {
-						"id": "{{ post.url | slugify }}",
-						"title": "{{ post.title | xml_escape }}",
-						"categories": "{{ post.categories | join: ", " | xml_escape }}",
-						"url": " {{ post.url | xml_escape }}",
-						"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
-					}
-					{% assign added = true %}
-				{% endunless %}
-		{% endfor %}
-		{% for post in site.pages %}
+		{% for post in site.websites %}
 				{% unless post.excluded_in_search %}
 					{% if added %},{% endif %}
 					{% assign added = false %}

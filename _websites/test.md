@@ -1,8 +1,8 @@
 ---
 title: Test
 tags:
+    - six
     - three
-    - two
     - one
 ---
 
