@@ -4,8 +4,6 @@ title: Text-based mind map
 email: maksim.akkuzin@yandex.ru
 author: Maksim Akkuzin
 
-url: ""
-
 repo: "https://github.com/makkuzin/makkuzin.github.io"
 github_user: "makkuzin"
 github_repo: "makkuzin.github.io"
@@ -31,10 +29,14 @@ fixedNav: 'true' # true or false
 
 permalink: /:year/:title/
 markdown: kramdown
-exclude: [_site, CHANGELOG.md, LICENSE, README.md, vendor]
+exclude: [_site, LICENSE]
 
 # Collections
 collections:
+  books:
+    output: true
+  websites:
+    output: true
   docs:
     output: true
     permalink: /:collection/:path
@@ -42,11 +44,22 @@ collections:
 # Defaults
 defaults:
   - scope:
+      path: "_books"
+      type: "books"
+    values:
+      layout: default
+
+  - scope:
+      path: "_websites"
+      type: "websites"
+    values:
+      layout: default
+
+  - scope:
       path: "_docs"
       type: "docs"
     values:
-#     layout: page
-      layout: default
+      layout: page
   -
     scope:
       path: ""

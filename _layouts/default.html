@@ -31,12 +31,12 @@
                                     {% if crumb != "index" %}
                                         {% if forloop.last %}
                                             <li class="breadcrumb-item active" aria-current="page">
-                                                <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+                                                <a href="{{ page.url }}">{{ page.title }}</a>
                                             </li>
                                         {% else %}
                                             {% if page.url != "/docs/" %}
                                                 <li class="breadcrumb-item">
-                                                    <a href="{{ site.url }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{% if crumb == "docs" %}Documentation{% else %}{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}{% endif %}</a>
+                                                    <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{% if crumb == "docs" %}Documentation{% else %}{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}{% endif %}</a>
                                                 </li>
                                             {% endif %}
                                         {% endif %}

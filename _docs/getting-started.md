@@ -82,7 +82,7 @@ in the same directory, and from that page you can test linking to a subfoldr.
 In the case of not having a subfolder, we could write the link out directly:
 
 ```
-{% raw %}[example]({{ site.baseurl }}/docs/clusters/sherlock/getting-started.md){% endraw %}
+{% raw %}[example](/docs/clusters/sherlock/getting-started.md){% endraw %}
 ```
 
 or just put the relative path:
@@ -149,7 +149,7 @@ If you want to add an external url for a parent or child, do this:
 It might be the case that your site or group has news items that would
 warrent sharing with the community, and should be available as a feed.
 For this reason, you can write traditional [posts](https://jekyllrb.com/docs/posts/) in the `_posts`
-folder that will parse into the site [feed]({{ site.baseurl }}/feed.xml)
+folder that will parse into the site [feed](/feed.xml)
 The bottom of the page links the user to a post archive, where posts are organized
 according to the year.
 
@@ -353,7 +353,7 @@ and then add them to the navigation by adding to the content of [_data/toc.yml](
 
 #### Tags
 
-If you include tags on a page, by default they will link to the [tags page]({{ site.url }}{{ site.baseurl }}/tags) on the site. However, if you define a `tag_search_endpoint` url in your configuration file, by clicking
+If you include tags on a page, by default they will link to the [tags page](/tags) on the site. However, if you define a `tag_search_endpoint` url in your configuration file, by clicking
 the tag, the user will be taken to this page to search for it. As an example,
 we define the current search endpoint to be Ask Cyberinfrastructure, and
 page tags link to a search on it:
