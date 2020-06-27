@@ -5,86 +5,29 @@
         </button>
     </form>  
     <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
-        <ul class="td-sidebar-nav__section pr-md-3">
-            <li class="td-sidebar-nav__section-title">
-                <a  href="/books" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
-                    Books
-                </a>
-            </li>
-            <ul>
-                <li class="collapse show" id="books">
-                    <ul class="td-sidebar-nav__section pr-md-3">
-                        {% for book in site.books %}
-                            <li class="td-sidebar-nav__section-title">
-                                <a href="{{ book.url }}" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
-                                    {{ book.title }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-
-        <ul class="td-sidebar-nav__section pr-md-3">
-            <li class="td-sidebar-nav__section-title">
-                <a  href="/websites" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
-                    Websites
-                </a>
-            </li>
-            <ul>
-                <li class="collapse show" id="websites">
-                    <ul class="td-sidebar-nav__section pr-md-3">
-                        {% for website in site.websites %}
-                            <li class="td-sidebar-nav__section-title">
-                                <a href="{{ website.url }}" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
-                                    {{ website.title }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-        <!-- TODO delete below -->
-        {% for section in site.data.toc %}
-            <ul class="td-sidebar-nav__section pr-md-3">
-                {% capture sectionUrl %}{{ section.url | replace: "/", "" }}{% endcapture %}
-                {% capture pageUrl %}{{ page.url | replace: "/", "" }}{% endcapture %}
-                <li class="td-sidebar-nav__section-title">
-                    <a  href="{% if section.url %}/{{ section.url }}{% else %}{{ section.external_url }}{% endif %}" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
-                        {{ section.title }}
-                    </a>
-                </li>
-                {% if section.links %}
+        {% for collection in site.collections %}
+            {% unless collection.label == "posts" %}
+                <ul class="td-sidebar-nav__section pr-md-3">
+                    <li class="td-sidebar-nav__section-title">
+                        <a  href="/{{ collection.label }}" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">
+                            {{ collection.label | capitalize }}
+                        </a>
+                    </li>
                     <ul>
-                        <li class="collapse show" id="{{ section.title | slugify }}">
+                        <li class="collapse show" id="{{ collection.label }}">
                             <ul class="td-sidebar-nav__section pr-md-3">
-                                {% for entry in section.links %}
+                                {% for post in collection.docs %}
                                     <li class="td-sidebar-nav__section-title">
-                                        <a href="{% if entry.url %}/{{ entry.url }}{% else %}{{ entry.external_url }}{% endif %}" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
-                                            {{ entry.title }}
+                                        <a href="{{ post.url }}" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">
+                                            {{ post.title }}
                                         </a>
                                     </li>
-                                    {% if page.url contains entry.url or pageUrl == sectionUrl %}
-                                        <ul>
-                                            <li class="collapse show" id="{{ child.title | slugify }}">
-                                                {% if entry.children %}
-                                                    {% for child in entry.children %}
-                                                        <a class="td-sidebar-link td-sidebar-link__page " id="m-{{ section.title | slugify }}-{{ entry.title | slugify }}-{{ child.title | slugify }}" href="{% if child.url %}/{{ child.url }}{% else %}{{ child.external_url }}{% endif %}">
-                                                            {{ child.title }}
-                                                        </a>
-                                                    {% endfor %}
-                                                {% endif %}
-                                            </li>
-                                        </ul>
-                                    {% endif %}
                                 {% endfor %}
                             </ul>
                         </li>
                     </ul>
-                {% endif %}
-            </ul>
+                </ul>
+            {% endunless %}
         {% endfor %}
     </nav>
 </div>

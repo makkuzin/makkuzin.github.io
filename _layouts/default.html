@@ -24,11 +24,11 @@
                         </nav>
                     </div>
                     <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
-                        <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-                            <ol class="breadcrumb spb-1">
-                                {% assign crumbs = page.url | append: "/"  | replace: '//', '/' | split: '/' %}
-                                {% for crumb in crumbs offset: 1 %}
-                                    {% if crumb != "index" %}
+                        {% unless page.hide_breadcrumbs %}
+                            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+                                <ol class="breadcrumb spb-1">
+                                    {% assign crumbs = page.url | append: "/"  | replace: '//', '/' | split: '/' %}
+                                    {% for crumb in crumbs offset: 1 %}
                                         {% if forloop.last %}
                                             <li class="breadcrumb-item active" aria-current="page">
                                                 <a href="{{ page.url }}">{{ page.title }}</a>
@@ -40,10 +40,10 @@
                                                 </li>
                                             {% endif %}
                                         {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </ol>
-                        </nav>
+                                    {% endfor %}
+                                </ol>
+                            </nav>
+                        {% endunless %}
                         <div class="td-content">
                             {{ content }}	
                             {% if section.links %}
