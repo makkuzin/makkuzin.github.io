@@ -4,8 +4,9 @@
 <script>
 $(document).ready(function() {
     // toc
-    var toc = $('#TOC');
-    sections = $('.td-content h1');
+    {% unless page.hide_toc %}
+        var toc = $('#TOC');
+        sections = $('.td-content h1');
         $.each(sections, function(idx, v) {
             section = $(v);
             var div_id = $(section).attr('id');
@@ -27,28 +28,29 @@ $(document).ready(function() {
              })
              $("#link_" + div_id).append(children);
         });
+    {% endunless %}
 
-        // tags
-        {% if page.tags %}
-            $('h1').first().append('<div>{% for tag in page.tags %}<span style="font-size:12px" class="badge badge-{{ site.tag_color }}"><a style="cursor:pointer; color:white" href="{% if site.tag_search_endpoint %}{{ site.tag_search_endpoint }}{{ tag }}{% else %}/tags#{{ tag }} {% endif %}">{{ tag }}</a></span>{% endfor %}</div>')
-        {% endif %}
+    // tags
+    {% if page.tags %}
+        $('h1').first().append('<div>{% for tag in page.tags %}<span style="font-size:12px" class="badge badge-{{ site.tag_color }}"><a style="cursor:pointer; color:white" href="{% if site.tag_search_endpoint %}{{ site.tag_search_endpoint }}{{ tag }}{% else %}/tags#{{ tag }} {% endif %}">{{ tag }}</a></span>{% endfor %}</div>')
+    {% endif %}
 
-        // permalinks
-        var headers = ["h2", "h3", "h4"]
-        var colors = ["orange", "green", "blue"]
+    // permalinks
+    var headers = ["h2", "h3", "h4"]
+    var colors = ["orange", "green", "blue"]
 
-        $.each(headers, function(i, header){
-            var color = colors[i];
-            $(header).each(function () {
-                var href=$(this).attr("id");
-                $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
-            });
-        })
+    $.each(headers, function(i, header){
+        var color = colors[i];
+        $(header).each(function () {
+            var href=$(this).attr("id");
+            $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
+        });
+    })
 
-        var top_h1 = $('h1').first();
-        if (top_h1) {
-            $('main').attr('id', top_h1.attr('id'));
-            top_h1.removeAttr('id');
-        }
-    });
+    var top_h1 = $('h1').first();
+    if (top_h1) {
+        $('main').attr('id', top_h1.attr('id'));
+        top_h1.removeAttr('id');
+    }
+});
 </script>
