@@ -19,29 +19,19 @@ hide_toc: true
 
 <script>
     window.data = {
-        {% for post in site.books %}
-            {% if added %},{% endif %}
-            {% assign added = false %}
-            "{{ post.url | slugify }}": {
-                "id": "{{ post.url | slugify }}",
-                "title": "{{ post.title | xml_escape }}",
-                "categories": "{{ post.categories | join: ", " | xml_escape }}",
-                "url": " {{ post.url | xml_escape }}",
-                "content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
-            }
-            {% assign added = true %}
-        {% endfor %}
-        {% for post in site.websites %}
-            {% if added %},{% endif %}
-            {% assign added = false %}
-            "{{ post.url | slugify }}": {
-                "id": "{{ post.url | slugify }}",
-                "title": "{{ post.title | xml_escape }}",
-                "categories": "{{ post.categories | join: ", " | xml_escape }}",
-                "url": " {{ post.url | xml_escape }}",
-                "content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
-            }
-            {% assign added = true %}
+        {% for collection in site.collections %}
+            {% for post in collection.docs %}
+                {% if added %},{% endif %}
+                {% assign added = false %}
+                "{{ post.url | slugify }}": {
+                    "id": "{{ post.url | slugify }}",
+                    "title": "{{ post.title | xml_escape }}",
+                    "categories": "{{ post.categories | join: ", " | xml_escape }}",
+                    "url": " {{ post.url | xml_escape }}",
+                    "content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+                }
+                {% assign added = true %}
+            {% endfor %}
         {% endfor %}
     };
 </script>
