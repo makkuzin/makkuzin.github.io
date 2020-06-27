@@ -1,7 +1,6 @@
 ---
 layout: default
 permalink: /
-hide_breadcrumbs: true
 ---
 
 # Welcome to Docsy Jekyll
