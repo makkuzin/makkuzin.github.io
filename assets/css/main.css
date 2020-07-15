@@ -18511,6 +18511,12 @@ html body .md-typeset .headerlink {
     padding: .75rem
 }
 
+.section-index .entry p {
+    color: #888;
+    margin-top: 5px;
+    margin-bottom: 8px
+}
+
 .section-index h5 {
     margin-bottom: 0
 }

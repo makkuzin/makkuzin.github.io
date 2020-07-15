@@ -30,6 +30,11 @@ $(document).ready(function() {
         });
     {% endunless %}
 
+    // author
+    {% if page.author %}
+        $('h1').first().append('<p style="font-size:1.2rem;color:#888;margin-top:10px;margin-bottom:0">by {{ page.author }}</p>')
+    {% endif %}
+
     // tags
     {% if page.tags %}
         $('h1').first().append('<div>{% for tag in page.tags %}<span style="font-size:12px" class="badge badge-{{ site.tag_color }}"><a style="cursor:pointer; color:white" href="{% if site.tag_search_endpoint %}{{ site.tag_search_endpoint }}{{ tag }}{% else %}/tags#{{ tag }} {% endif %}">{{ tag }}</a></span>{% endfor %}</div>')

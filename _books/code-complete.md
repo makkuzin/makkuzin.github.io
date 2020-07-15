@@ -1,9 +1,11 @@
 ---
+author: Steve McConnell
 title: Code Complete
 tags:
-    - one
-    - two
-    - three
+    - programming
+    - design
+    - testing
+    - OOP
 ---
 
 # Code Complete
