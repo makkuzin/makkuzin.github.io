@@ -8,7 +8,7 @@ tags:
     - OOP
 ---
 
-# Code Complete
+# {{ page.title }}
 
 ## Проектирование
 

@@ -11,10 +11,11 @@ permalink: /books/
         <div class="entry">
             <h5><a href="{{ book.url | prepend: site.baseurl }}">{{ book.title }}</a></h5>
             <p>
-            {% if book.author %}
-                by {{ book.author }}&nbsp;&nbsp;|&nbsp;&nbsp;
-            {% endif %}
-            <time datetime="{{- book.date | date_to_xmlschema -}}"> {{- book.date | date: "%B %d, %Y" -}}</time></p>
+                {% if book.author %}
+                    by {{ book.author }}&nbsp;&nbsp;|&nbsp;&nbsp;
+                {% endif %}
+                <time datetime="{{- book.date | date_to_xmlschema -}}"> {{- book.date | date: "%B %d, %Y" -}}</time>
+            </p>
             <div>
                 {% for tag in book.tags %}
                     <span style="font-size:12px" class="badge badge-{{ site.tag_color }}">

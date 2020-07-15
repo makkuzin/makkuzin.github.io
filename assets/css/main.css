@@ -18357,6 +18357,13 @@ html body .md-typeset .headerlink {
     margin-bottom: 1rem
 }
 
+.td-content > h1 > p {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 10px;
+    margin-bottom: 0
+}
+
 .td-content>h2 {
     margin-bottom: 1rem
 }

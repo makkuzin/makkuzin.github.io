@@ -1,4 +1,5 @@
 ---
+source: Test
 title: Test
 tags:
     - six
@@ -6,7 +7,7 @@ tags:
     - one
 ---
 
-# Test
+# {{ page.title }}
 
 ## First
 
