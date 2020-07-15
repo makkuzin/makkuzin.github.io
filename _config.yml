@@ -33,7 +33,7 @@ exclude: [_site, LICENSE]
 collections:
   books:
     output: true
-  websites:
+  notes:
     output: true
 
 # Defaults
@@ -45,7 +45,7 @@ defaults:
       layout: default
 
   - scope:
-      path: "_websites"
-      type: "websites"
+      path: "_notes"
+      type: "notes"
     values:
       layout: default
