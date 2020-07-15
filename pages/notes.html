@@ -4,3 +4,22 @@ permalink: /notes/
 ---
 
 <h1>Notes</h1>
+
+<div class="section-index">
+    <hr class="panel-line">
+    {% for note in site.notes %}
+        <div class="entry">
+            <h5><a href="{{ note.url | prepend: site.baseurl }}">{{ note.title }}</a></h5>
+            <p><time datetime="{{- note.date | date_to_xmlschema -}}"> {{- note.date | date: "%B %d, %Y" -}}</time></p>
+            <div>
+                {% for tag in note.tags %}
+                    <span style="font-size:12px" class="badge badge-{{ site.tag_color }}">
+                        <a style="cursor:pointer; color:white" href="{% if site.tag_search_endpoint %}{{ site.tag_search_endpoint }}{{ tag }}{% else %}/tags#{{ tag }} {% endif %}">
+                            {{ tag }}
+                        </a>
+                    </span>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
